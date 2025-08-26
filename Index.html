@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiquidTunes – Your Music. Reimagined.</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background: linear-gradient(270deg, #0f0f0f, #1c1c1c, #2e2e2e);
+      background-size: 600% 600%;
+      animation: bgShift 15s ease infinite;
+      color: #f5f5f5;
+      line-height: 1.6;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(20,20,20,0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.6s ease;
+    }
+
+    header h2 { margin: 0; }
+
+    /* Toggle Button */
+    .toggle-btn {
+      cursor: pointer;
+      background: #0A84FF;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover { background: #0070cc; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(28,28,28,0.3);
+      transition: background 0.6s ease;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, #0A84FF, #fff);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .cta {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      background: #0A84FF;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .cta:hover { background: #0070cc; }
+
+    /* Features Section */
+    .features, .download {
+      padding: 60px 20px;
+      text-align: center;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+    .features ul {
+      list-style: none;
+      margin-top: 20px;
+      padding: 0;
+    }
+    .features li {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    /* Screenshot Gallery */
+    .gallery {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    /* Badges */
+    .badges {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .badges img {
+      width: 180px;
+      transition: transform 0.2s ease;
+    }
+    .badges img:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1c1c1c;
+      font-size: 0.9em;
+      color: #777;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+    footer a { color: #0A84FF; text-decoration: none; }
+
+    /* Light Mode Styles */
+    body.light {
+      background: linear-gradient(270deg, #fafafa, #f0f0f0, #e5e5e5);
+      color: #222;
+    }
+    body.light header { background: rgba(255,255,255,0.8); }
+    body.light footer { background: #e5e5e5; color: #444; }
+    body.light .hero { background: rgba(240,240,240,0.6); }
+    body.light .hero h1 {
+      background: linear-gradient(90deg, #000, #0A84FF, #000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>🎧 LiquidTunes</h2>
+    <button class="toggle-btn" onclick="toggleTheme()">☀️/🌙</button>
+  </header>
+
+  <section class="hero">
+    <h1>Your Music. Reimagined in Liquid Glass.</h1>
+    <p>Premium music player for iOS 17 with Spatial Audio, Dolby Atmos, Dynamic Island, CarPlay, and AirPlay.</p>
+    <a href="#download" class="cta">Join TestFlight Beta</a>
+  </section>
+
+  <section class="features">
+    <h2>✨ Features</h2>
+    <ul>
+      <li>🎵 Streaming Playlist + Atmos demo</li>
+      <li>🏝 Dynamic Island + Live Activities</li>
+      <li>🔒 Lock Screen playback controls</li>
+      <li>📡 AirPlay & 🚗 CarPlay support</li>
+      <li>💫 Haptics + ProMotion 120Hz</li>
+      <li>🔐 Privacy-first</li>
+    </ul>
+
+    <div class="gallery">
+      <img src="https://via.placeholder.com/200x400/0A84FF/FFFFFF?text=Playlist" alt="Playlist Screenshot">
+      <img src="https://via.placeholder.com/200x400/333333/FFFFFF?text=Now+Playing" alt="
